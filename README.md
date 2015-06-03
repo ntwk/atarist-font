@@ -4,7 +4,9 @@
 
 ## Overview
 
-Atarist is a rebranding of the high-resolution system font originally featured on the Atari ST home computer.  It is a monospaced bitmap font available in a single size of 8x16 pixels.
+Atarist is a rebranding of the high-resolution system font originally
+featured on the Atari ST home computer.  It is a monospaced bitmap
+font available in a single size of 8x16 pixels.
 
 ## Installation
 
@@ -12,4 +14,5 @@ Atarist is a rebranding of the high-resolution system font originally featured o
 
 ## Credits
 
-The font file upon which this project is based is at [http://www.modelb.bbcmicro.com/retro-fonts.html](http://www.modelb.bbcmicro.com/retro-fonts.html)
+The font file upon which this project is based is at
+[http://www.modelb.bbcmicro.com/retro-fonts.html](http://www.modelb.bbcmicro.com/retro-fonts.html)
