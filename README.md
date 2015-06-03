@@ -10,7 +10,9 @@ font available in a single size of 8x16 pixels.
 
 ## Installation
 
-    cp atarist-normal.bdf ~/.fonts
+1. Copy or symlink the fonts to your ~/.fonts directory:
+   `cp atarist-normal.bdf ~/.fonts`
+2. Run `fc-cache -fv` to update your font cache.
 
 ## Credits
 
