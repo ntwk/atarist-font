@@ -1,0 +1,47 @@
+#!/usr/bin/env ruby
+
+if ARGV.length == 2
+  outmap = +("\x00".b * 16 * 256)
+elsif ARGV.length == 3
+  # Use a different font as a base.
+  outmap = File.open(ARGV.shift, "rb", &:read)
+end
+
+state = :lost
+encoding = nil
+ch = nil
+
+def write(outmap, encoding, ch)
+  offset = encoding * 16
+  ch.each.with_index do |c, i|
+    outmap[offset+i] = c.chr.b
+  end
+end
+
+File.readlines(ARGV[0]).each do |line|
+  case state
+  when :lost
+    case line
+    when /\AENCODING (\d+)\n\z/
+      encoding = $1.to_i
+      next if encoding > 255
+      ch = []
+      state = :encoding
+    end
+  when :encoding
+    case line
+    when /\ABITMAP\n\z/
+      state = :bitmap
+    end
+  when :bitmap
+    case line
+    when /\AENDCHAR\n\z/
+      write(outmap, encoding, ch)
+      state = :lost
+    when /\A([0-9a-fA-F]{2})\n\z/
+      ch << $1.to_i(16)
+    end
+  end
+end
+
+File.open(ARGV[1], "wb") { |f| f.write(outmap) }
