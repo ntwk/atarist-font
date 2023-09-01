@@ -6,7 +6,8 @@
 
 Atarist is a rebranding of the high-resolution system font originally
 featured on the Atari ST home computer.  It is a monospaced bitmap
-font available in a single size of 8x16 pixels.
+font available in a single size of 8x16 pixels.  The original font has
+been extended to include support for the Cyrillic script.
 
 ## Installation
 
